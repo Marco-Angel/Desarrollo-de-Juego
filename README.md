@@ -30,3 +30,8 @@ Explicación de el codigo
 - pintar_nave y pintar_meteorito: dibujan la nave y los meteoritos.
 - productor_meteoritos: hilo que crea meteoritos nuevos usando un semáforo para limitar su cantidad.
 - consumidor_meteoritos: hilo que mueve meteoritos, suma puntos y usa un Lock para evitar conflictos al modificar la lista compartida.
+
+<img width="753" height="641" alt="image" src="https://github.com/user-attachments/assets/6670a3f5-8b9b-4410-b5d8-631c9c88f576" />
+<img width="891" height="260" alt="image" src="https://github.com/user-attachments/assets/3912aba1-2fa0-4d36-b401-f65d7d82dd43" />
+
+
