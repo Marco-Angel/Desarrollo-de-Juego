@@ -46,3 +46,7 @@ Explicación de el codigo
 - Se libera un espacio en el semaforo para permitir generar otro meteorito.
 - Se usa mutex para sincronizar el acceso a la lista.
 
+## Resultado
+<img width="1007" height="802" alt="image" src="https://github.com/user-attachments/assets/7f0a229a-e177-4e6d-a5f6-f8f04acdd0db" />
+
+En esta ultima evidencia se oprime f5 para correr el programa y en el terminal de la parte de abajo escribir el comando **Python Ejercicio.py** para que pueda correr el juego.
