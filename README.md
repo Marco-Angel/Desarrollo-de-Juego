@@ -15,12 +15,13 @@ Explicación de el codigo
 ## Configuración de la nave y semaforos
 <img width="680" height="445" alt="image" src="https://github.com/user-attachments/assets/7d3b3d99-8e27-4702-be61-71aa398505d3" />
 
-- Definir el tamaño y posición inicial de la nave.
+- En este imagen se define el tamaño y posición inicial de la nave.
 - Crea cola y lista para manejar meteoritos.
 - Configura su tamaño, velocidad y límite máximo.
 - Inicializa puntuación y estado del juego.
-- Usa un Lock para evitar conflictos entre hilos.
-- Usa un Semáforo para limitar la cantidad de meteoritos activos.
+- Usa un Lock para evitar conflictos entre hilos, donde se usa un hilo independiente
+- Usa un Semáforo para limitar la cantidad de meteoritos activos que pueden existir a la vez.
+- Se usa un mutex  para proteger la lista meteoritos de accesos simultáneos por varios hilos.
 
 --
 ## Uso de hilos y semaforos
@@ -32,8 +33,16 @@ Explicación de el codigo
 - consumidor_meteoritos: hilo que mueve meteoritos, suma puntos y usa un Lock para evitar conflictos al modificar la lista compartida.
 
 --
-
+## Ejecución de el bucle principal del juego
 <img width="753" height="641" alt="image" src="https://github.com/user-attachments/assets/6670a3f5-8b9b-4410-b5d8-631c9c88f576" />
 <img width="891" height="260" alt="image" src="https://github.com/user-attachments/assets/3912aba1-2fa0-4d36-b401-f65d7d82dd43" />
 
+- Inicia dos hilos: Controla el movimiento descendente de los meteoritos y también en un solo hilo. 
+- Limpia la pantalla y detecta eventos (salir del juego).
+- Mueve la nave con las teclas ← y →.
+- Usa un Lock para dibujar meteoritos y detectar colisiones.
+- Muestra la puntuación y actualiza la ventana a 60 FPS.
+- Al chocar o salir, cierra Pygame y muestra el puntaje final.
+- Se libera un espacio en el semaforo para permitir generar otro meteorito.
+- Se usa mutex para sincronizar el acceso a la lista.
 
